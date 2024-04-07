@@ -1,5 +1,5 @@
 <p align="center">
-  <h1><strong>Brain Computer Interface Foundation Model Benchmark & Dataset</strong></h1>h1>
+  <h2><strong>Brain Computer Interface Foundation Model Benchmark</strong></h2>
 </p>
 
 ![Neurosity EEG Dataset](https://i.imgur.com/CUZb72p.png)
