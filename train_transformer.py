@@ -78,9 +78,10 @@ valid_dataset = TensorDataset(valid_inputs, valid_labels)
 valid_loader = DataLoader(valid_dataset, batch_size=10, shuffle=False)
 
 # Define the model, optimizer, and loss function
-model = ConvTransformerModel()
+device = "cuda"
+model = ConvTransformerModel().to(device)
 optimizer = optim.Adam(model.parameters(), lr=0.001)
-criterion = nn.MSELoss()
+criterion = nn.MSELoss().to(device)
 
 print('Beginning Training!')
 # Training and validation loop
@@ -90,6 +91,8 @@ for epoch in range(num_epochs):
     model.train()
     train_loss = 0
     for data, target in train_loader:
+        data = data.to(device)
+        target = target.to(device)
         optimizer.zero_grad()
         output = model(data)
         loss = criterion(output, target)
