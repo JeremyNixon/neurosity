@@ -7,10 +7,16 @@ import os
 import pandas as pd
 import torch.nn.functional as F
 
+# Ensure the directory for model saving exists
+model_dir = 'models/'
+if not os.path.exists(model_dir):
+    os.makedirs(model_dir)
+
 print('Loading Training Data')
 large_df = pd.read_csv('data/combined_dataset.csv')
 print('Loaded Data.')
 sessions = np.unique(large_df['session_id'])
+
 # Iterate through sessions to construct a dataset.
 for session in sessions[:1]:
     session_df = large_df[large_df['session_id'] == session]
@@ -109,6 +115,10 @@ for epoch in range(num_epochs):
             validation_loss += loss.item()
 
     print(f'Epoch {epoch+1}, Training Loss: {train_loss / len(train_loader)}, Validation Loss: {validation_loss / len(valid_loader)}')
+
+    # Save model after each epoch
+    model_path = os.path.join(model_dir, f'model_epoch_{epoch+1}.pth')
+    torch.save(model.state_dict(), model_path)
 
 # Optionally, compute the overall MSE for the validation data after training
 total_mse = 0
