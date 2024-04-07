@@ -1,4 +1,3 @@
-# Aggregate CNN Transformer
 import numpy as np
 import torch
 import torch.nn as nn
@@ -14,11 +13,11 @@ print('Loaded Data.')
 sessions = np.unique(large_df['session_id'])
 # Iterate through sessions to construct a dataset.
 for session in sessions[:1]:
-    session_df = large_df[large_df['session_id']==session]
-    session_df = session_df.drop(['session_id','timestamp'], axis=1)
+    session_df = large_df[large_df['session_id'] == session]
+    session_df = session_df.drop(['session_id', 'timestamp'], axis=1)
 
 print('Creating Train / Validation data split.')
-# Establish train validaiton split
+# Establish train-validation split
 training_datapoints = []
 training_labels = []
 validation_datapoints = []
@@ -39,7 +38,6 @@ for i in range(len(session_df) - 33):
         validation_labels.append(label)
 
 print('Train Validation Data Created.')
-
 
 class ConvTransformerModel(nn.Module):
     def __init__(self):
@@ -77,7 +75,7 @@ valid_dataset = TensorDataset(valid_inputs, valid_labels)
 valid_loader = DataLoader(valid_dataset, batch_size=10, shuffle=False)
 
 # Define the model, optimizer, and loss function
-device = "cuda"
+device = "cuda" if torch.cuda.is_available() else "cpu"
 model = ConvTransformerModel().to(device)
 optimizer = optim.Adam(model.parameters(), lr=0.001)
 criterion = nn.MSELoss().to(device)
@@ -90,8 +88,8 @@ for epoch in range(num_epochs):
     model.train()
     train_loss = 0
     for data, target in train_loader:
-        data = data.to(device)  # Move data to the same device as the model
-        target = target.to(device)  # Move target to the same device as the model
+        data = data.to(device)
+        target = target.to(device)
         optimizer.zero_grad()
         output = model(data)
         loss = criterion(output, target)
@@ -104,8 +102,8 @@ for epoch in range(num_epochs):
     validation_loss = 0
     with torch.no_grad():
         for data, target in valid_loader:
-            data = data.to(device)  # Move data to the same device as the model
-            target = target.to(device)  # Move target to the same device as the model
+            data = data.to(device)
+            target = target.to(device)
             output = model(data)
             loss = criterion(output, target)
             validation_loss += loss.item()
@@ -116,8 +114,8 @@ for epoch in range(num_epochs):
 total_mse = 0
 with torch.no_grad():
     for data, target in valid_loader:
-        data = data.to(device)  # Move data to the same device as the model
-        target = target.to(device)  # Move target to the same device as the model
+        data = data.to(device)
+        target = target.to(device)
         output = model(data)
         total_mse += criterion(output, target).item()
 
