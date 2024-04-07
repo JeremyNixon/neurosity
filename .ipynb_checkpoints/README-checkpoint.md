@@ -54,8 +54,6 @@ Each data file corresponds to a single EEG session and includes the following co
 
 ## Model Download
 
-Loading & training data is located in 
-
 ### macOS and Linux
 ```
 wget https://www.dropbox.com/scl/fi/thiwnpzkzy24h68aa6xsv/model_epoch_10.pth?rlkey=hge6ndjyctw89vy3vkudztub6&dl=1
