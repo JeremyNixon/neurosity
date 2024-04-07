@@ -25,17 +25,23 @@ This dataset is stored in CSV format for easy use and accessibility. The data is
 ### Downloading the Data
 The data can be accessed and downloaded through this repository. To clone the repository and fetch the dataset, use the following Git command:
 
-
 ```
 git clone https://github.com/JeremyNixon/neurosity
 cd neurosity
 ```
+and then download the data zip file from this dropbox url:
 
-and then download the data zip file from this Drive url:
+### macOS and Linux
+```
+wget https://www.dropbox.com/scl/fi/3nxrisor9rofbokvzes73/combined_dataset.csv?rlkey=aiqmglls3sj92u6ou4c23uh2d&dl=1
+```
 
+
+### Windows
 ```
-https://drive.google.com/file/d/1V6MTCZU0LJPs3xa1E0HYnN0syWgVsOKU/view?usp=sharing
+Invoke-WebRequest -Uri "https://www.dropbox.com/scl/fi/3nxrisor9rofbokvzes73/combined_dataset.csv?rlkey=aiqmglls3sj92u6ou4c23uh2d&dl=1" -OutFile "combined_dataset.csv"
 ```
+
 
 ## Data Structure
 Each data file corresponds to a single EEG session and includes the following columns:
