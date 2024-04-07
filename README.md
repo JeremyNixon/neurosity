@@ -1,6 +1,9 @@
+<p align="center">
+  <h1><strong>Brain Computer Interface Foundation Model Benchmark & Dataset</strong></h1>h1>
+</p>
+
 ![Neurosity EEG Dataset](https://i.imgur.com/CUZb72p.png)
 
-## Neurosity EEG Dataset
 Welcome to the Neurosity EEG Dataset repository, a comprehensive and curated compilation of brain-computer interface (BCI) data meticulously collected through the advanced Neurosity Crown 3 device. This dataset is designed to foster research and development in the fields of neuroscience, cognitive science, machine learning, and beyond. By providing high-quality, preprocessed EEG signals, we aim to support and accelerate innovations in brain-computer interface technologies and the understanding of neural dynamics.
 
 ## Dataset Overview
@@ -24,8 +27,14 @@ The data can be accessed and downloaded through this repository. To clone the re
 
 
 ```
-git clone https://github.com/Neurosity/NeurosityEEGDataset.git
-cd NeurosityEEGDataset
+git clone https://github.com/JeremyNixon/neurosity
+cd neurosity
+```
+
+and then download the data zip file from this Drive url:
+
+```
+https://drive.google.com/file/d/1V6MTCZU0LJPs3xa1E0HYnN0syWgVsOKU/view?usp=sharing
 ```
 
 ## Data Structure
