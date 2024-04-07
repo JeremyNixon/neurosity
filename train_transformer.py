@@ -17,7 +17,6 @@ for session in sessions[:1]:
     session_df = large_df[large_df['session_id']==session]
     session_df = session_df.drop(['session_id','timestamp'], axis=1)
 
-
 print('Creating Train / Validation data split.')
 # Establish train validaiton split
 training_datapoints = []
@@ -91,8 +90,8 @@ for epoch in range(num_epochs):
     model.train()
     train_loss = 0
     for data, target in train_loader:
-        data = data.to(device)
-        target = target.to(device)
+        data = data.to(device)  # Move data to the same device as the model
+        target = target.to(device)  # Move target to the same device as the model
         optimizer.zero_grad()
         output = model(data)
         loss = criterion(output, target)
@@ -105,6 +104,8 @@ for epoch in range(num_epochs):
     validation_loss = 0
     with torch.no_grad():
         for data, target in valid_loader:
+            data = data.to(device)  # Move data to the same device as the model
+            target = target.to(device)  # Move target to the same device as the model
             output = model(data)
             loss = criterion(output, target)
             validation_loss += loss.item()
@@ -115,6 +116,8 @@ for epoch in range(num_epochs):
 total_mse = 0
 with torch.no_grad():
     for data, target in valid_loader:
+        data = data.to(device)  # Move data to the same device as the model
+        target = target.to(device)  # Move target to the same device as the model
         output = model(data)
         total_mse += criterion(output, target).item()
 
