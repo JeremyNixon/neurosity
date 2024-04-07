@@ -36,12 +36,15 @@ and then download the data zip file from this dropbox url:
 wget https://www.dropbox.com/scl/fi/3nxrisor9rofbokvzes73/combined_dataset.csv?rlkey=aiqmglls3sj92u6ou4c23uh2d&dl=1
 ```
 
-
 ### Windows
 ```
 Invoke-WebRequest -Uri "https://www.dropbox.com/scl/fi/3nxrisor9rofbokvzes73/combined_dataset.csv?rlkey=aiqmglls3sj92u6ou4c23uh2d&dl=1" -OutFile "combined_dataset.csv"
 ```
 
+OR via this drive link:
+```
+https://drive.google.com/file/d/1V6MTCZU0LJPs3xa1E0HYnN0syWgVsOKU/view?usp=sharing
+```
 
 ## Data Structure
 Each data file corresponds to a single EEG session and includes the following columns:
