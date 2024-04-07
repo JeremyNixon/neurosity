@@ -87,6 +87,6 @@ If you use the Neurosity EEG Dataset in your research, please cite it using the 
 This dataset is made available under the MIT License. For more detailed licensing information, please see the LICENSE.md file in this repository.
 
 ## Contact
-For any queries regarding the dataset, please contact jeremy@omniscience.com.
+For any queries regarding the dataset, please contact jeremy@omniscience.tech.
 
 We hope that this dataset serves as a valuable resource for your research and development efforts in the exciting field of brain-computer interfaces. Happy exploring!
