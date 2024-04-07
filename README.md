@@ -1,3 +1,5 @@
+![Neurosity EEG Dataset](https://i.imgur.com/CUZb72p.png)
+
 ## Neurosity EEG Dataset
 Welcome to the Neurosity EEG Dataset repository, a comprehensive and curated compilation of brain-computer interface (BCI) data meticulously collected through the advanced Neurosity Crown 3 device. This dataset is designed to foster research and development in the fields of neuroscience, cognitive science, machine learning, and beyond. By providing high-quality, preprocessed EEG signals, we aim to support and accelerate innovations in brain-computer interface technologies and the understanding of neural dynamics.
 
