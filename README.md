@@ -29,7 +29,7 @@ The data can be accessed and downloaded through this repository. To clone the re
 git clone https://github.com/JeremyNixon/neurosity
 cd neurosity
 ```
-and then download the data zip file from this dropbox url:
+and then download the cleaned data zip file from this dropbox url:
 
 ### macOS and Linux
 ```
@@ -45,6 +45,26 @@ OR via this drive link:
 ```
 https://drive.google.com/file/d/1V6MTCZU0LJPs3xa1E0HYnN0syWgVsOKU/view?usp=sharing
 ```
+
+### Session Metadata
+The per-session metadata can be found in the uncleaned, raw dataset. 
+
+
+### macOS and Linux
+```
+wget https://www.dropbox.com/scl/fi/j5x8v2ir7ynalqjoqkc05/bci_dataset.zip?rlkey=9bdojz2hqu9mnngorzr8ti9k2&dl=1
+```
+
+### Windows
+```
+Invoke-WebRequest -Uri "https://www.dropbox.com/scl/fi/j5x8v2ir7ynalqjoqkc05/bci_dataset.zip?rlkey=9bdojz2hqu9mnngorzr8ti9k2&dl=1"
+```
+
+OR via this drive link:
+```
+https://drive.google.com/file/d/1V6MTCZU0LJPs3xa1E0HYnN0syWgVsOKU/view?usp=sharing
+```
+
 
 ## Data Structure
 Each data file corresponds to a single EEG session and includes the following columns:
