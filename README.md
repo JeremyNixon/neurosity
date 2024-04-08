@@ -72,6 +72,10 @@ Each data file corresponds to a single EEG session and includes the following co
 - <b>Timestamp</b>: Unix timestamp in milliseconds
 - CP3, C3, F5, PO3, PO4, F6, C4, CP4: EEG data from the respective channels
 
+Raw sessions dataset explainer video:
+
+<div style="position: relative; padding-bottom: 64.67065868263472%; height: 0;"><iframe src="https://www.loom.com/embed/bc16cc0846554dc7adc9c7b277747e30?sid=7118c23b-0071-4cf2-9255-ffd615fbef8f" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
 ## Model Download
 
 Loading & training data is located in 
